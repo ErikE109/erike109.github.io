@@ -1,0 +1,215 @@
+/* pnblå: #00a0d6; */
+html{
+    scroll-behavior: smooth;
+}
+body
+{
+    /* background-color: #00a0d6 !important; */
+    background-color: whitesmoke !important;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    min-height: 100vh;
+}
+main{
+    margin: auto;
+} 
+.inputError{
+    background-color:rgb(244, 248, 103);
+
+}
+
+
+
+ #h7bl tr{
+    border-bottom: none;
+}
+
+#h7bl td:last-child{
+    border-bottom: solid 1px #808080;
+}
+    
+
+
+
+.activeButton
+{
+    background-color: #0db5de !important;
+}
+.nav-item:hover{
+    background-color: #0db5de;
+    cursor: pointer;
+    }
+
+h1{
+    margin: 0 auto;
+    text-align: center;
+    color: #007593
+}
+.width45{
+    display: block;
+    width: 45%;
+
+}
+footer{
+    position: relative;
+    top: 100;
+    width: 100%;
+    margin-top: 1.5em;
+    background-color: whitesmoke;
+}
+
+.homePageNav li:hover{
+    background-color: rgb(195, 192, 192);
+}
+.feedback-icon {
+    font-size: 1.2em;
+    margin-left: 10px;
+    visibility: hidden; 
+    position: relative;
+    left: 10px;
+    width: 10px;
+  }
+  
+  .feedback-icon.success {
+    visibility: visible;
+    color: green;
+    content: '✔';
+  }
+  
+  .feedback-icon.error {
+    visibility: visible;
+    color: red;
+    content: '✘';
+  }
+.homePageNav li a{
+    color:black;
+    text-decoration: none;
+}
+form {
+    margin-bottom: 20px;
+max-width: 500px; 
+}
+
+#transitCheck, #exportCheck
+{
+    border-color: #007593;
+}
+
+input[type="file"]::file-selector-button
+{
+    height: 100px;
+    width: 100px;
+  
+}
+
+input[type="file"]
+{
+    padding-left: 0px;
+}
+
+#transitCheck:hover, #exportCheck:hover
+{
+    cursor:pointer;
+   
+}
+
+#loading {
+    display: none; /* Initially hidden */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 15px 20px;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#completed {
+    display: none; /* Initially hidden */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 15px 20px;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#failure {
+    display: none; /* Initially hidden */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    font-weight: bold;
+    transform: translate(-50%, -50%);
+    padding: 15px 20px;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.input-group
+{
+    width: 30% !important;
+}
+
+.form-group
+{
+    font-weight: bold;
+    margin-bottom: 10px !important;
+}
+
+
+
+#inputTable button
+{
+    margin: 0 5px;
+    font-size: small;
+}
+
+
+
+.container-fluid
+{
+    border-bottom: solid #007593 2px
+}
+
+.importPNAvgifterdiv, .exportPNAvgifterdiv
+{
+    margin: 15px auto;
+}
+
+
+.pnAvgiftstabeller label
+{
+    font-size: large;
+    font-weight: bolder;
+}
+
+th, tr, td
+{
+    
+    padding-left:10px;
+}
+
+.PNtabeller
+{
+    /* background-color: #05b1dc; */
+    border-collapse: separate;
+    margin:0;
+    padding: 0;
+}
+.PNtabeller th, .PNtabeller tr, .PNtabeller td
+{
+    padding:0;
+    padding-right: 10px;
+
+}
+
+.exportLandDiv h3, .GbBookingExport
+{
+    text-align: center;
+    border-bottom: solid 2px #007593;
+}
+
+
