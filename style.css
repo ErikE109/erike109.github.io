@@ -23,9 +23,12 @@ main{
     border-bottom: none;
 }
 
-#h7bl td:last-child{
-    border-bottom: solid 1px #808080;
+#h7bl tr:last-child{
+    border: solid 1px #808080;
 }
+
+
+
     
 
 
