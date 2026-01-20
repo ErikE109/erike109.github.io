@@ -1870,7 +1870,7 @@ const h7bl = [
   { tariffCode: "24" },
   { tariffCode: "2701" },
   { tariffCode: "2702" },
-  { tariffCode: "2703000000" },
+  { tariffCode: "2703" },
   { tariffCode: "2704" },
   { tariffCode: "2710" },
   { tariffCode: "2711" },
@@ -1933,13 +1933,11 @@ const h7bl = [
 
 console.log("Total H7 codes:", h7bl.length);
 
-const h7TwoDigitCodes = h7bl
-  .map((code) => code.tariffCode)
-  .filter((code) => code.length === 2);
+const h7TwoDigitCodes = h7bl.map((code) => code.tariffCode.substring(0, 2));
 
-const h7FourDigitCodes = h7bl
-  .map((code) => code.tariffCode)
-  .filter((code) => code.length === 4);
+// const h7FourDigitCodes = h7bl
+//   .map((code) => code.tariffCode)
+//   .filter((code) => code.length === 4);
 
 const h7Element = document.getElementById("h7bl");
 
@@ -1947,7 +1945,9 @@ if (h7Element) {
   let table = document.createElement("table");
 
   // Sort the codes
-  h7bl.sort();
+  h7bl.sort((a, b) => {
+    return a.tariffCode.localeCompare(b.tariffCode);
+  });
 
   let colCounter = 0;
   let noOfCols = 10;
@@ -1980,17 +1980,31 @@ const searchH7 = () => {
   inputField.style.backgroundColor = "";
   let input = inputField.value.trim();
 
-  const result = h7bl.some((code) => input.startsWith(code.tariffCode));
+  if (input.length <= 1) return;
 
-  if (input !== "") {
-    if (result) {
-      inputField.style.backgroundColor = "red";
-      inputField.classList.add("is-invalid");
-    } else {
-      inputField.style.backgroundColor = "";
+  const result = h7bl.some(
+    (code) =>
+      input.startsWith(code.tariffCode) || code.tariffCode.startsWith(input)
+  );
 
-      inputField.classList.remove("is-invalid");
-    }
+  // const firstTwoExist = h7TwoDigitCodes.some((code) => input.startsWith(code));
+
+  // if (!firstTwoExist) {
+  //   inputField.classList.remove("is-invalid");
+  //   inputField.classList.add("is-valid");
+  //   inputField.style.backgroundColor = "lightgreen";
+  //   return;
+  // }
+
+  if (result) {
+    inputField.style.backgroundColor = "red";
+    inputField.classList.remove("is-valid");
+    inputField.classList.add("is-invalid");
+  } else {
+    inputField.style.backgroundColor = "lightgreen";
+
+    inputField.classList.remove("is-invalid");
+    inputField.classList.add("is-valid");
   }
 };
 
