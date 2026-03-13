@@ -109,6 +109,7 @@ const pnCharges = [
   pnCharge("Omprövning (företag) CS", 2006390, 352, "import"),
   pnCharge("Omprövning (privat) Log", 2003850, 200, "import"),
   pnCharge("Omprövning (företag) Log", 2003851, 352, "import"),
+  pnCharge("Ofullständig tullhandling", 2001606, 195, "export"),
 ];
 
 pnCharges.sort((a, b) => a.name.localeCompare(b.name));
@@ -212,7 +213,7 @@ function renderCountries(countries) {
                         ${country.products
                           .map(
                             (p) =>
-                              `<tr><td>${p.product}</td><td>${p.condition}</td></tr>`
+                              `<tr><td>${p.product}</td><td>${p.condition}</td></tr>`,
                           )
                           .join("")}
                     </tbody>
@@ -264,7 +265,7 @@ function renderCountries(countries) {
 
             </div>
         </div>
-    `
+    `,
     )
     .join("");
 }
@@ -344,7 +345,7 @@ function generateTvinnpdf() {
     }
 
     alert(
-      "Unable to create PDF. Please fill Transport or Regnumber and try again!"
+      "Unable to create PDF. Please fill Transport or Regnumber and try again!",
     );
     return;
   }
@@ -399,8 +400,8 @@ function generateTvinnpdf() {
   const agentsSet = new Set();
   const inputData = rows.map((row) =>
     Array.from(row.querySelectorAll("td, th")).map((cell) =>
-      cell.textContent.trim()
-    )
+      cell.textContent.trim(),
+    ),
   );
 
   // Step 2: Process the data
@@ -432,7 +433,7 @@ function generateTvinnpdf() {
 
       agentsSet.add(agent.toUpperCase());
       currentContacts = agentsContact.filter((a) =>
-        agentsSet.has(a.name.toUpperCase())
+        agentsSet.has(a.name.toUpperCase()),
       );
 
       // Processed row
@@ -516,7 +517,7 @@ function generateTvinnpdf() {
         y,
         pageWidth,
         transportId,
-        regnum
+        regnum,
       );
       y = tvinnAddColumnHeaders(doc, headerRow, startXOutData, y, pageWidth);
     }
@@ -535,7 +536,7 @@ function generateTvinnpdf() {
   today = today.toISOString().split("T")[0].split("-").join("");
 
   doc.save(
-    "Tvinnlista" + "_" + transportId + "_" + regnum + "_" + today + ".pdf"
+    "Tvinnlista" + "_" + transportId + "_" + regnum + "_" + today + ".pdf",
   );
 }
 
@@ -704,7 +705,7 @@ function addTvinnHeader(ele) {
     !toggleValidityCheckSpan(regnrelement)
   ) {
     alert(
-      "Please make sure both transportnumber and regnumber are filled and try again"
+      "Please make sure both transportnumber and regnumber are filled and try again",
     );
     return;
   }
@@ -1384,7 +1385,7 @@ async function performOCR(page, worker) {
 
   const imageUrl = canvas.toDataURL("image/png");
   const blob = await new Promise((resolve) =>
-    canvas.toBlob(resolve, "image/png")
+    canvas.toBlob(resolve, "image/png"),
   );
 
   // const {
@@ -1541,14 +1542,15 @@ function mergeData(arrayOfcommodityItems) {
     arrayOfcommodityItems.reduce((acc, commodityItem) => {
       const key =
         commodityItem.hsTariffNumber + "_" + commodityItem.countryOfOrigin;
-      if (!acc[key]) acc[key] = { ...commodityItem };
-      else {
+      if (!acc[key]) {
+        acc[key] = { ...commodityItem };
+      } else {
         acc[key].quantity += commodityItem.quantity;
         acc[key].netWeight += commodityItem.netWeight;
         acc[key].itemValue += commodityItem.itemValue;
       }
       return acc;
-    }, {})
+    }, {}),
   );
 }
 
@@ -1984,7 +1986,7 @@ const searchH7 = () => {
 
   const result = h7bl.some(
     (code) =>
-      input.startsWith(code.tariffCode) || code.tariffCode.startsWith(input)
+      input.startsWith(code.tariffCode) || code.tariffCode.startsWith(input),
   );
 
   // const firstTwoExist = h7TwoDigitCodes.some((code) => input.startsWith(code));
@@ -2021,7 +2023,11 @@ let specialTaricList = [
   { description: "Chips", tariffCode: "200520" },
 ];
 
-const specialTaricElement = document.getElementById("specialTaric").children[0];
+let specialTaricElement;
+
+if (document.getElementById("specialTaric")) {
+  specialTaricElement = document.getElementById("specialTaric").children[0];
+}
 
 if (specialTaricElement) {
   specialTaricList.forEach((item) => {
@@ -2035,3 +2041,12 @@ if (specialTaricElement) {
     specialTaricElement.appendChild(tr);
   });
 }
+
+fetch("https://distr.tullverket.se/tulltaxan/")
+  .then((response) => response.json())
+  .then((data) => {
+    console.log(data);
+  })
+  .catch((error) => {
+    console.error("Error fetching IP address:", error);
+  });
