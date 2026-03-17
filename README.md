@@ -1,1 +1,1 @@
-My project for keeping track of repetetive tasks
+My project for keeping track of repetitive tasks
