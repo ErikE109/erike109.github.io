@@ -2024,13 +2024,14 @@ const searchH7 = () => {
     inputField.classList.remove("is-invalid");
     inputField.classList.add("is-valid");
   }
-  highLightHit(input);
+  if (result) highLightHit(input);
 };
 
 const highLightHit = (input) => {
   const cells = h7Element.querySelectorAll("td");
   cells.forEach((cell) => {
-    if (cell.textContent.startsWith(input.substring(0, 6))) {
+    const text = cell.textContent;
+    if (text.startsWith(input) || input.startsWith(text)) {
       cell.style.backgroundColor = "yellow";
     } else {
       cell.style.backgroundColor = "";
