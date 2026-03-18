@@ -1994,6 +1994,9 @@ const searchH7 = () => {
   inputField.classList.remove("is-invalid");
   inputField.style.backgroundColor = "";
   let input = inputField.value.trim();
+  h7Element
+    .querySelectorAll("td")
+    .forEach((cell) => (cell.style.backgroundColor = ""));
 
   if (input.length <= 1) return;
 
@@ -2021,6 +2024,18 @@ const searchH7 = () => {
     inputField.classList.remove("is-invalid");
     inputField.classList.add("is-valid");
   }
+  highLightHit(input);
+};
+
+const highLightHit = (input) => {
+  const cells = h7Element.querySelectorAll("td");
+  cells.forEach((cell) => {
+    if (cell.textContent.startsWith(input.substring(0, 6))) {
+      cell.style.backgroundColor = "yellow";
+    } else {
+      cell.style.backgroundColor = "";
+    }
+  });
 };
 
 let returTaricList = [{ description: "Läkemedel", tariffCode: "300490" }];
