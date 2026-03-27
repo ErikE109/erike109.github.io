@@ -211,6 +211,39 @@ function activeBtn() {
   });
 }
 
+const postalaExportKoder = [
+  {
+    terminal: "Arlanda",
+    exitOffice: "SE003033",
+    step1: "GYER",
+    step2: "XOU2",
+  },
+  {
+    terminal: "Malmö",
+    exitOffice: "SE000050",
+    step1: "F8YZ",
+    step2: "1B0T",
+  },
+  {
+    terminal: "Göteborg",
+    exitOffice: "SE060340",
+    step1: "ZJPY",
+    step2: "L1W0",
+  },
+  {
+    terminal: "Örebro",
+    exitOffice: "se060341",
+    step1: "IIEX",
+    step2: "KZEU",
+  },
+  {
+    terminal: "Veddesta",
+    exitOffice: "SE003033",
+    step1: "M7HY",
+    step2: "GXSD",
+  },
+];
+
 function renderCountries(countries) {
   countries.sort((a, b) => a.name.localeCompare(b.name));
   exportSection.innerHTML = countries
@@ -220,7 +253,7 @@ function renderCountries(countries) {
             <h3>${country.name}</h3>
             <div class="col">
                 <h5>Leveransvillkor</h5>
-                <table class="PNtabeller table">
+                <table class="table table-striped table-bordered table-sm align-middle text-cente">
                     <thead><tr><th>Produkt</th><th>Villkor</th></tr></thead>
                     <tbody>
                         ${country.products
@@ -248,10 +281,9 @@ function renderCountries(countries) {
               country.name === "Island"
                 ? `
                 <ul class=list-group>
-                <li class=list-group-item>DROPS TS-external. Consignor: 7717842-NO, Payer: 9991</li>
+                <li class=list-group-item>TS-external. Proc: 3171</li>
                 <li class=list-group-item>Avslut av transit, notera i BNB-arket </li>               
-                <li class=list-group-item>Lägg upp kollin ärendet. Proc: 3171</li>
-                <li class=list-group-item>Transit från BNB</li>
+
         
                 
                
@@ -2100,5 +2132,26 @@ if (platsKodTable) {
     tr.appendChild(td1);
     tr.appendChild(td2);
     platsKodTable.appendChild(tr);
+  });
+}
+
+let postalExportTable = document.getElementById("postalExportTable");
+if (postalExportTable) {
+  postalExportTable = postalExportTable.children[0];
+  postalaExportKoder.forEach((location) => {
+    let row = document.createElement("tr");
+    let terminal = document.createElement("td");
+    let exportOffice = document.createElement("td");
+    let step1 = document.createElement("td");
+    let step2 = document.createElement("td");
+    terminal.textContent = location.terminal;
+    exportOffice.textContent = location.exitOffice;
+    step1.textContent = location.step1;
+    step2.textContent = location.step2;
+    row.appendChild(terminal);
+    row.appendChild(exportOffice);
+    row.appendChild(step1);
+    row.appendChild(step2);
+    postalExportTable.append(row);
   });
 }
