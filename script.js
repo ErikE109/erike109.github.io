@@ -232,7 +232,7 @@ const postalaExportKoder = [
   },
   {
     terminal: "Örebro",
-    exitOffice: "se060341",
+    exitOffice: "SE060341",
     step1: "IIEX",
     step2: "KZEU",
   },
@@ -243,6 +243,8 @@ const postalaExportKoder = [
     step2: "GXSD",
   },
 ];
+
+postalaExportKoder.sort((a, b) => a.terminal.localeCompare(b.terminal));
 
 function renderCountries(countries) {
   countries.sort((a, b) => a.name.localeCompare(b.name));
