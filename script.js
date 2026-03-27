@@ -2139,7 +2139,7 @@ if (platsKodTable) {
 
 let postalExportTable = document.getElementById("postalExportTable");
 if (postalExportTable) {
-  postalExportTable = postalExportTable.children[0];
+  postalExportTable = postalExportTable.children[1];
   postalaExportKoder.forEach((location) => {
     let row = document.createElement("tr");
     let terminal = document.createElement("td");
