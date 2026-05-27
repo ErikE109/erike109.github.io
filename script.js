@@ -123,6 +123,7 @@ const pnCharges = [
   pnCharge("Omprövning (privat) Log", 2003850, 200, "import"),
   pnCharge("Omprövning (företag) Log", 2003851, 352, "import"),
   pnCharge("Ofullständig tullhandling", 2001606, 195, "export"),
+  pnCharge("Inläsning tull-EDI", 2010022, 100, "export"),
 ];
 
 pnCharges.sort((a, b) => a.name.localeCompare(b.name));
