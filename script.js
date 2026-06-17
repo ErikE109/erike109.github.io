@@ -166,6 +166,9 @@ function writeWebPageHeader() {
                  <li class="nav-item">
                     <a class="nav-link" href="postal.html">Postal</a>
                 </li>
+                 <li class="nav-item">
+                    <a class="nav-link" href="game.html">Game</a>
+                </li>
                 
               
              
