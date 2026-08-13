@@ -154,7 +154,7 @@ function updateGame() {
     }
     //spaceRock.x = Math.random() * (gameArea.canvas.width - spaceRock.width);
   });
-  if (spaceRocks.some((rock) => collide(rock, ship, 10))) {
+  if (spaceRocks.some((rock) => collide(rock, ship, 17.5))) {
     gameOver = true;
     const ctx = gameArea.ctx;
     const centerX = gameArea.canvas.width / 2;
