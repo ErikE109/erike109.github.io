@@ -158,6 +158,14 @@ input[type="file"]
     margin-bottom: 10px !important;
 }
 
+.return-feedback {
+  display: none;
+  width: 100%;
+  margin-top: 0.25rem;
+  font-size: 0.875em;
+  color: #dc3545;
+}
+
 
 
 #inputTable button
