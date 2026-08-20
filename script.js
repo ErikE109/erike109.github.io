@@ -2274,19 +2274,17 @@ const searchH7 = () => {
 
   if (input.length <= 1) return;
 
-  const result = h7bl.find(
-    (code) =>
-      input.startsWith(code.tariffCode) || code.tariffCode.startsWith(input),
-  );
+  // const result = h7bl.find(
+  //   (code) =>
+  //     input.startsWith(code.tariffCode) || code.tariffCode.startsWith(input),
+  // );
 
-  // const firstTwoExist = h7TwoDigitCodes.some((code) => input.startsWith(code));
-
-  // if (!firstTwoExist) {
-  //   inputField.classList.remove("is-invalid");
-  //   inputField.classList.add("is-valid");
-  //   inputField.style.backgroundColor = "lightgreen";
-  //   return;
-  // }
+  const result =
+    h7bl.find((code) => code.tariffCode === input) ||
+    h7bl.find((code) => input.startsWith(code.tariffCode)) ||
+    h7bl.find((code) => code.tariffCode.startsWith(input));
+  // .filter((code) => input.startsWith(code.tariffCode))
+  // .sort((a, b) => b.tariffCode.length - a.tariffCode.length)[0];
 
   if (result) {
     inputField.style.backgroundColor = "red";
