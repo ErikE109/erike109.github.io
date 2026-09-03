@@ -16,6 +16,12 @@ main{
     background-color:rgb(244, 248, 103);
 
 }
+#footerContainer
+{
+    border-top: solid 2px #007593;
+    color: black;
+    font-size: small;
+}
 
 
 

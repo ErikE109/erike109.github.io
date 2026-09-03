@@ -193,11 +193,11 @@ function writeWebPageHeader() {
 
 function writeWebPageFooter() {
   document.querySelector("footer").innerHTML = `
-<div class="container">
-<div class="d-flex flex-wrap justify-content-between align-items-center py-3">
+<div id="footerContainer" class="fixed-bottom">
+<div class="container d-flex flex-wrap justify-content-between align-items-center py-3">
     <div class="col"></div>
     <div class="col d-flex align-items-center justify-content-center"></div>
-    <div class="col d-flex justify-content-end"></div>
+    <div class="col d-flex justify-content-end">Last updated: ${new Date().toLocaleDateString()}</div>
 </div>
 </div>
 
