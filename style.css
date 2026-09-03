@@ -16,6 +16,13 @@ main{
     background-color:rgb(244, 248, 103);
 
 }
+
+footer
+{
+    position: fixed;
+    height: 20px;
+    margin-top: 25em;
+}
 #footerContainer
 {
     border-top: solid 2px #007593;
