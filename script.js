@@ -2287,13 +2287,14 @@ const searchH7 = () => {
   // .sort((a, b) => b.tariffCode.length - a.tariffCode.length)[0];
 
   if (result) {
-    inputField.style.backgroundColor = "red";
     if (result.type === "return") {
       returnFeedback.style.display = "block";
+      inputField.style.backgroundColor = "red";
 
       console.log("Return code found:", result.tariffCode);
     }
     if (result.type === "restricted" || result.type === "exciseDuty") {
+      inputField.style.backgroundColor = "orange";
       returnFeedback.style.display = "none";
       inputField.classList.add("is-invalid");
       console.log("Restricted code found:", result.tariffCode);
