@@ -127,9 +127,36 @@ const pnCharges = [
 ];
 
 pnCharges.sort((a, b) => a.name.localeCompare(b.name));
+let pnChargeIsSortedByLetter = true;
+
 const importFees = pnCharges.filter((charge) => charge.type == "import");
 
 const exportFees = pnCharges.filter((charge) => charge.type == "export");
+
+const sortPnChargeByLetter = () => {
+  importFees.sort((a, b) => a.name.localeCompare(b.name));
+  exportFees.sort((a, b) => a.name.localeCompare(b.name));
+};
+
+const sortPnChargeByNumber = () => {
+  importFees.sort((a, b) => a.number - b.number);
+  exportFees.sort((a, b) => a.number - b.number);
+};
+
+const sortBtnFee = document.querySelector("#sortButtonFees");
+
+const sortPnChargeByType = () => {
+  if (pnChargeIsSortedByLetter) {
+    sortPnChargeByNumber();
+    pnChargeIsSortedByLetter = false;
+    sortBtnFee.innerHTML = "Sortera på artikelnamn";
+  } else {
+    sortPnChargeByLetter();
+    pnChargeIsSortedByLetter = true;
+    sortBtnFee.innerHTML = "Sortera på artikelnummer";
+  }
+  renderFeeTables();
+};
 
 //Call default functions
 writeWebPageHeader();
@@ -322,6 +349,7 @@ function renderCountries(countries) {
 }
 function renderFeeTables() {
   if (importFeeTable) {
+    importFeeTable.children[1].innerHTML = "";
     importFees.forEach((fee) => {
       let row = document.createElement("tr");
 
@@ -342,6 +370,7 @@ function renderFeeTables() {
   }
 
   if (exportFeeTable) {
+    exportFeeTable.children[1].innerHTML = "";
     exportFees.forEach((fee) => {
       let row = document.createElement("tr");
 
@@ -1740,7 +1769,7 @@ const h7bl = [
   { tariffCode: "05", type: "restricted" },
   { tariffCode: "15", type: "restricted" },
   { tariffCode: "16", type: "restricted" },
-  { tariffCode: "24", type: "return" },
+  { tariffCode: "24", type: "restriced" },
   { tariffCode: "28", type: "restricted" },
   { tariffCode: "29", type: "restricted" },
   { tariffCode: "30", type: "restricted" },
