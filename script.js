@@ -1769,7 +1769,7 @@ const h7bl = [
   { tariffCode: "05", type: "restricted" },
   { tariffCode: "15", type: "restricted" },
   { tariffCode: "16", type: "restricted" },
-  { tariffCode: "24", type: "restriced" },
+  { tariffCode: "24", type: "restricted" },
   { tariffCode: "28", type: "restricted" },
   { tariffCode: "29", type: "restricted" },
   { tariffCode: "30", type: "restricted" },
@@ -1993,7 +1993,7 @@ const h7bl = [
   { tariffCode: "9303", type: "return" },
   { tariffCode: "9306", type: "return" },
   { tariffCode: "940610", type: "restricted" },
-  { tariffCode: "950450", type: "return" },
+  { tariffCode: "950450", type: "restricted" },
   { tariffCode: "9601", type: "restricted" },
   { tariffCode: "9613", type: "return" },
 ];
