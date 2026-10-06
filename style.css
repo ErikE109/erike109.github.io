@@ -181,10 +181,9 @@ input[type="file"]
   width: 100%;
   margin-top: 0.25rem;
   font-size: 0,75em;
-  background-color:red;
-  color: black;
+  color: red;
   padding-right: 1rem;
-  padding-left: 1rem;
+  padding-left: 0rem;
   
 }
 

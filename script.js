@@ -1762,7 +1762,7 @@ const apidataArrayOfObjects = [
 ];
 
 const h7bl = [
-  { tariffCode: "01", type: "return" },
+  { tariffCode: "01", type: "return", description: "Levande djur" },
   { tariffCode: "02", type: "restricted" },
   { tariffCode: "03", type: "restricted" },
   { tariffCode: "04", type: "restricted" },
@@ -1773,7 +1773,11 @@ const h7bl = [
   { tariffCode: "28", type: "restricted" },
   { tariffCode: "29", type: "restricted" },
   { tariffCode: "30", type: "restricted" },
-  { tariffCode: "36", type: "return" },
+  {
+    tariffCode: "36",
+    type: "return",
+    description: "Krut, sprängämnen, tändstickor",
+  },
   { tariffCode: "41", type: "restricted" },
   { tariffCode: "47", type: "restricted" },
   { tariffCode: "93", type: "restricted" },
@@ -1822,18 +1826,18 @@ const h7bl = [
 
   { tariffCode: "210111", type: "exciseDuty" },
   { tariffCode: "210112", type: "exciseDuty" },
-  { tariffCode: "210390", type: "return" },
+  { tariffCode: "210390", type: "restricted" },
   { tariffCode: "2104", type: "restricted" },
   { tariffCode: "2105", type: "restricted" },
   { tariffCode: "2106", type: "restricted" },
   { tariffCode: "2202", type: "restricted" },
-  { tariffCode: "2203", type: "return" },
-  { tariffCode: "2204", type: "return" },
-  { tariffCode: "2205", type: "return" },
+  { tariffCode: "2203", type: "return", description: "Öl" },
+  { tariffCode: "2204", type: "return", description: "Vin" },
+  { tariffCode: "2205", type: "return", description: "Vin" },
   { tariffCode: "2206", type: "restricted" },
-  { tariffCode: "2207", type: "return" },
-  { tariffCode: "2208", type: "return" },
-  { tariffCode: "2209", type: "return" },
+  { tariffCode: "2207", type: "return", description: "Sprit" },
+  { tariffCode: "2208", type: "return", description: "Sprit" },
+  { tariffCode: "2209", type: "return", description: "Ättika" },
   { tariffCode: "2301", type: "restricted" },
   { tariffCode: "2305", type: "restricted" },
   { tariffCode: "2309", type: "restricted" },
@@ -1849,25 +1853,33 @@ const h7bl = [
   { tariffCode: "270810", type: "restricted" },
   { tariffCode: "2710", type: "exciseDuty" },
   { tariffCode: "2711", type: "exciseDuty" },
-  { tariffCode: "271012", type: "return" },
+  { tariffCode: "271012", type: "return", description: "Bränsle" },
   { tariffCode: "271311", type: "exciseDuty" },
   { tariffCode: "271312", type: "exciseDuty" },
-  { tariffCode: "2805199020", type: "return" },
-  { tariffCode: "2844", type: "return" },
-  { tariffCode: "2852", type: "return" },
-  { tariffCode: "290513", type: "return" },
-  { tariffCode: "290514", type: "return" },
-  { tariffCode: "290539", type: "return" },
-  { tariffCode: "2941", type: "return" },
+  { tariffCode: "2805199020", type: "return", description: "Lithium metall" },
+  { tariffCode: "2844", type: "return", description: "Radioaktiva ämnen" },
+  {
+    tariffCode: "2852",
+    type: "return",
+    description: "Kemikalier med kvicksilver",
+  },
+  { tariffCode: "290513", type: "return", description: "Butanol" },
+  { tariffCode: "290514", type: "return", description: "Butanoler" },
+  { tariffCode: "290539", type: "return", description: "Butan" },
+  { tariffCode: "2941", type: "return", description: "Antibiotika" },
 
-  { tariffCode: "3001", type: "return" },
-  { tariffCode: "3003", type: "return" },
-  { tariffCode: "300410", type: "return" },
-  { tariffCode: "300420", type: "return" },
-  { tariffCode: "30043", type: "return" },
-  { tariffCode: "30044", type: "return" },
-  { tariffCode: "300460", type: "return" },
-  { tariffCode: "300490", type: "return" },
+  {
+    tariffCode: "3001",
+    type: "return",
+    description: "Körtlar, extrakter av körtlar, heparin",
+  },
+  { tariffCode: "3003", type: "return", description: "Medikamenter" },
+  { tariffCode: "300410", type: "return", description: "Medikamenter" },
+  { tariffCode: "300420", type: "return", description: "Medikamenter" },
+  { tariffCode: "30043", type: "return", description: "Medikamenter" },
+  { tariffCode: "30044", type: "return", description: "Medikamenter" },
+  { tariffCode: "300460", type: "return", description: "Medikamenter" },
+  { tariffCode: "300490", type: "return", description: "Medikamenter" },
   { tariffCode: "300660", type: "return" },
   { tariffCode: "3101", type: "restricted" },
   { tariffCode: "310230", type: "restricted" },
@@ -1876,9 +1888,9 @@ const h7bl = [
 
   { tariffCode: "3301", type: "exciseDuty" },
   { tariffCode: "3302", type: "exciseDuty" },
-  { tariffCode: "33030010", type: "return" },
+  { tariffCode: "33030010", type: "return", description: "Parfym" },
   { tariffCode: "3305", type: "exciseDuty" },
-  { tariffCode: "330530", type: "return" },
+  { tariffCode: "330530", type: "return", description: "Hårsprayer" },
   { tariffCode: "330129", type: "restricted" },
   { tariffCode: "330690", type: "exciseDuty" },
   { tariffCode: "330710", type: "exciseDuty" },
@@ -1899,17 +1911,37 @@ const h7bl = [
   { tariffCode: "3604", type: "restricted" },
   { tariffCode: "3803", type: "exciseDuty" },
   { tariffCode: "3808", type: "restricted" },
-  { tariffCode: "380891", type: "return" },
-  { tariffCode: "380892", type: "return" },
-  { tariffCode: "380893", type: "return" },
-  { tariffCode: "380894", type: "return" },
-  { tariffCode: "380899", type: "return" },
-  { tariffCode: "3813", type: "return" },
+  {
+    tariffCode: "380891",
+    type: "return",
+    description: "Insektsbekämpningsmedel",
+  },
+  {
+    tariffCode: "380892",
+    type: "return",
+    description: "Svampbekämpningsmedel",
+  },
+  {
+    tariffCode: "380893",
+    type: "return",
+    description: "Ogräsbekämpningsmedel",
+  },
+  { tariffCode: "380894", type: "return", description: "Desinfektionsmedel" },
+  {
+    tariffCode: "380899",
+    type: "return",
+    description: "Övriga bekämpningsmedel",
+  },
+  {
+    tariffCode: "3813",
+    type: "return",
+    description: "Preparat och laddningar till brandslä",
+  },
   { tariffCode: "3826", type: "exciseDuty" },
   { tariffCode: "382489", type: "restricted" },
   { tariffCode: "382492", type: "restricted" },
-  { tariffCode: "382499", type: "return" },
-  { tariffCode: "391220", type: "return" },
+  { tariffCode: "382499", type: "return", description: "Syra" },
+  { tariffCode: "391220", type: "return", description: "Cellulosanitrater" },
   { tariffCode: "391390", type: "restricted" },
   { tariffCode: "4206", type: "restricted" },
 
@@ -1957,8 +1989,12 @@ const h7bl = [
   { tariffCode: "847130", type: "exciseDuty" },
   { tariffCode: "847141", type: "exciseDuty" },
   { tariffCode: "847149", type: "exciseDuty" },
-  { tariffCode: "850650", type: "return" },
-  { tariffCode: "850760", type: "return" },
+  { tariffCode: "850650", type: "return", description: "Lithiumbatterier" },
+  {
+    tariffCode: "850760",
+    type: "return",
+    description: "Laddbara Lithiumbatterier",
+  },
   { tariffCode: "850811", type: "exciseDuty" },
   { tariffCode: "851650", type: "exciseDuty" },
   { tariffCode: "851660", type: "exciseDuty" },
@@ -1985,17 +2021,29 @@ const h7bl = [
   { tariffCode: "852871", type: "exciseDuty" },
   { tariffCode: "852872", type: "exciseDuty" },
   { tariffCode: "852873", type: "exciseDuty" },
-  { tariffCode: "8539322000", type: "return" },
+  {
+    tariffCode: "8539322000",
+    type: "return",
+    description: "Kvicksilver eller natriumlampor",
+  },
   { tariffCode: "854340", type: "exciseDuty" },
   { tariffCode: "8549", type: "restricted" },
   { tariffCode: "9013", type: "restricted" },
-  { tariffCode: "9301", type: "return" },
-  { tariffCode: "9303", type: "return" },
-  { tariffCode: "9306", type: "return" },
+  {
+    tariffCode: "9301",
+    type: "return",
+    description: "Vapen för militärt bruk",
+  },
+  {
+    tariffCode: "9303",
+    type: "return",
+    description: "Vapen som fungerar med explosiva laddningar",
+  },
+  { tariffCode: "9306", type: "return", description: "Bomber och granater" },
   { tariffCode: "940610", type: "restricted" },
   { tariffCode: "950450", type: "restricted" },
   { tariffCode: "9601", type: "restricted" },
-  { tariffCode: "9613", type: "return" },
+  { tariffCode: "9613", type: "Tändare" },
 ];
 
 console.log("Total H7 codes:", h7bl.length);
@@ -2054,7 +2102,7 @@ const searchH7 = () => {
 
   if (input.length <= 1) return;
 
-  // const result = h7bl.find(
+  // const result = h7bl.find(190110
   //   (code) =>
   //     input.startsWith(code.tariffCode) || code.tariffCode.startsWith(input),
   // );
@@ -2066,10 +2114,14 @@ const searchH7 = () => {
   // .filter((code) => input.startsWith(code.tariffCode))
   // .sort((a, b) => b.tariffCode.length - a.tariffCode.length)[0];
 
+  resultReturnDiv = document.getElementById("h7SearchResultReturn");
+
   if (result) {
     if (result.type === "return") {
       returnFeedback.style.display = "block";
       inputField.style.backgroundColor = "red";
+      if (resultReturnDiv)
+        resultReturnDiv.textContent = "Return - " + result.description;
 
       console.log("Return code found:", result.tariffCode);
     }
